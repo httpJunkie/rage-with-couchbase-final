@@ -1,0 +1,18 @@
+{
+  "name": "rage-with-couchbase-2021",
+  "version": "1.0.0",
+  "description": "For a complete walkthrough of this project, I have provided a three part blog post with instructions and more detailed explanation so that you can walk through this workshop on your own time:",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd react-apollo-client && npm start",
+    "server": "cd couchbase-gql-server && node server",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "postinstall": "(cd couchbase-gql-server && npm install); (cd react-apollo-client && npm install);"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
+}

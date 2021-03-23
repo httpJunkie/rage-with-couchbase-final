@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background-color: #f9f9f9;
+  Font-Family: 'Noto Serif', Serif;
+  Font-Size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* All Headings */
+H1, H2, H3, H4, H5, H6 {
+  Font-Family: 'Oxygen', Sans-Serif;
+  color: #E77494;
+}
+
+/*  */
+a.menu {
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 0.25em;
+}
+a.menu {
+  background-image: linear-gradient(to left, #fff, #E77494 88%);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 00% 2px;
+  background-position-y: 1.1em;
+  transition: background-size cubic-bezier(0, 0.5, 0, 1) 1s;
+}
+a.menu:hover,
+a.menu:visited:hover,
+a.menu:active:hover {
+  text-decoration: none;
+  background-size: 100% 2px;
+}
+a.menu:focus,
+a.menu:active {
+  text-decoration: none;
+  background-size: 100% 2px;
+}
+
+ul.airline-list {
+  padding: 0;
+  margin: 0;
+}
+ul.airline-list > li {
+  list-style: none;
+  line-height: 2.5em;
+  font-size: 1em;
+}
+
+.pad-one {
+  padding: 1em;
+}
+
+.airline-details {
+  font-family:  'Oxygen', Sans-Serif;
+  font-size: 2em;
+}
+
+.topnav {
+  width: 70%;
+  display: flex;
+}
+  
+.topnav ul { padding: 0; }
+.topnav ul { display: flex; margin: 0; }
+.topnav ul li { list-style-type: none; }
+.topnav ul > li:not(:last-child) { margin-right: 15px; }
+.topnav ul > li a { color: #212529; }

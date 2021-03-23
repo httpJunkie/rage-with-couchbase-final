@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "e1795182-180f-4bf1-ab2b-7a7fa71e44b7",
+		"name": "RAGE with Couchbase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAirlinesUK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getAirlinesUK {\n  airlinesUK {\n    id\n    name\n    callsign\n    country\n    iata\n    icao\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Get all airlines in the United Kingdom."
+			},
+			"response": []
+		},
+		{
+			"name": "getAirlineByKey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getAirlineByKey($id: Int!) {\n  airlineByKey(id:$id) {\n    id\n    name\n    callsign\n    country\n    iata\n    icao\n  }\n}",
+						"variables": "{\n\t\"id\": {{id}}\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Get a single airlineby providing the document's id, as named, the endpoint will retrieve our document by searching using a derived value `airline_113` the actual document key."
+			},
+			"response": []
+		},
+		{
+			"name": "getAirlineByRegion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getAirlinesByRegion($region: String!) {\n  airlinesByRegion(region:$region) {\n    id\n    name\n    callsign\n    country\n    iata\n    icao\n  }\n}",
+						"variables": "{\n\t\"region\": \"{{country}}\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Get a single airlineby providing the document's id, as named, the endpoint will retrieve our document by searching using a derived value `airline_113` the actual document key."
+			},
+			"response": []
+		},
+		{
+			"name": "updateExistingAirline",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation updateExistingAirline($id:Int!, $input:AirlineInput) {\n  updateAirline(id:$id, input:$input){\n    callsign\n    country\n    iata\n  }\n}",
+						"variables": "{\n  \"id\": 112,\n  \"input\": {\n    \"callsign\": \"FLYSTAR\",\n    \"country\": \"United Kingdom\"\n  }\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Get a single airlineby providing the document's id, as named, the endpoint will retrieve our document by searching using a derived value `airline_113` the actual document key."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "112"
+		}
+	]
+}
